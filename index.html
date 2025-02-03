@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سوپر اپلیکیشن اسنپ</title>
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="shortcut icon" href="../snapp/logo/logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+  <!-- #region menu -->
+  <div class="w-full font-bold border-b-1">
+    <div class="sm:w-full md:w-4/5 h-[70px] md:h-[90px] flex m-auto justify-start ">
+      <div class="flex justify-between w-full mx-5 mt-5 md:hidden flex-nowrap">
+       <span id="three_line"> <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="cursor-pointer bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+      </svg></span>
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="90" height="26"
+          viewBox="0 0 90 26">
+          <g fill="none" fill-rule="evenodd">
+            <g fill="#00D170">
+              <g>
+                <path
+                  d="M12.948 3.06c-.621 1.212-2.016 1.803-3.32 1.416-.438-.13-.894-.2-1.356-.2-.938 0-2.188.547-2.188 1.643 0 1.146 1.38 1.59 2.265 1.877l1.303.39c2.734.81 4.844 2.19 4.844 5.372 0 1.955-.47 3.962-2.032 5.292-1.536 1.304-3.594 1.851-5.573 1.851-2.464 0-4.876-.828-6.877-2.225-.013-.01-.018-.028-.01-.043l2.173-4.093c1.277 1.121 2.787 2.033 4.532 2.033 1.198 0 2.473-.6 2.473-1.981 0-1.434-2.004-1.93-3.098-2.242C2.88 11.237.77 10.403.77 6.596.77 2.607 3.61 0 7.542 0c1.969 0 4.375.62 6.118 1.6.015.01.022.029.013.046l-.725 1.415zM20.18 8.526h.001c.011 0 .022-.006.028-.015 1.092-1.605 2.418-2.15 4.261-2.15 3.593 0 5.026 2.269 5.026 5.554v5.44c0 1.56-1.263 2.825-2.822 2.825H24.79c-.019 0-.034-.015-.034-.034v-6.484c0-1.278.209-3.52-2.135-3.52-1.928 0-2.474 1.434-2.474 3.103v4.11c0 1.56-1.263 2.825-2.822 2.825H15.44c-.018 0-.033-.015-.033-.034V6.838c0-.018.015-.033.033-.033h4.673c.019 0 .034.015.034.033v1.654c0 .019.015.034.034.034M35.291 13.505c0 1.695 1.12 2.999 3.047 2.999 1.928 0 3.048-1.304 3.048-2.999 0-1.642-1.12-3.024-3.048-3.024-1.927 0-3.047 1.382-3.047 3.024m7.856 6.675h-1.884c-.019 0-.033-.015-.033-.034v-1.418c0-.02-.016-.034-.034-.034-.012 0-.023.006-.029.015-.836 1.32-2.47 1.914-4.026 1.914-3.959 0-6.745-3.311-6.745-7.144 0-3.832 2.734-7.118 6.692-7.118 1.507 0 3.088.552 4.082 1.679.02.023.06.01.06-.022v-1.18c0-.018.014-.033.033-.033h4.673c.018 0 .033.015.033.033v10.517c0 1.56-1.263 2.825-2.822 2.825M52.002 13.505c0 1.695 1.12 2.999 3.047 2.999s3.047-1.304 3.047-2.999c0-1.642-1.12-3.024-3.047-3.024-1.928 0-3.047 1.382-3.047 3.024m.19-5.188c.01 0 .022-.006.028-.015.862-1.32 2.47-1.94 4.027-1.94 3.985 0 6.745 3.337 6.745 7.17 0 3.858-2.734 7.091-6.693 7.091-1.533 0-3.117-.545-4.133-1.712-.003-.003-.007-.001-.007.003v4.082c0 1.56-1.264 2.825-2.822 2.825h-1.918V6.805h4.74v1.478c0 .02.014.034.033.034M68.461 13.505c0 1.695 1.12 2.999 3.047 2.999s3.048-1.304 3.048-2.999c0-1.642-1.121-3.024-3.048-3.024-1.928 0-3.047 1.382-3.047 3.024m.19-5.188c.011 0 .022-.006.028-.015.862-1.32 2.47-1.94 4.027-1.94 3.984 0 6.744 3.337 6.744 7.17 0 3.858-2.734 7.091-6.692 7.091-1.507 0-3.065-.526-4.082-1.654-.02-.023-.06-.009-.06.022v4.005c0 1.56-1.262 2.825-2.82 2.825H63.91c-.018 0-.034-.016-.034-.034V6.838c0-.018.016-.033.034-.033h4.672c.02 0 .034.015.034.033v1.445c0 .02.015.034.033.034M84.997.522l-3.212 12.35h2.67c1.292 0 2.42-.876 2.744-2.129L89.862.522h-4.865zM83.387 14.618c1.655 0 2.999 1.345 2.999 3.002 0 1.657-1.344 3.002-3 3.002-1.654 0-2.998-1.345-2.998-3.002 0-1.657 1.344-3.002 2.999-3.002z"
+                  transform="translate(-214 -43) translate(214 43)"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+
+      </div>
+      <img class="hidden md:flex" src="../snapp/logo/svg/logo.svg" alt="">
+      <ul class="md:flex hidden list-none items-center mx-7 h-[75px] font-display">
+        <li class="relative cursor-pointer group ">
+            <span class="flex items-center justify-center hover:text-green-500 ">
+              سوپر اپ اسنپ
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                class="mx-2 bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path
+                  d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>              
+            </span>
+            <ul class="hidden w-[140px] group-hover:block top-6 list-none bg-white border-2 flex-col justify-start item-start !absolute   ">
+              <li class="mx-2 my-5 hover:text-gray-400 "  >درخواست تاکسی</li>
+              <li class="mx-2 my-5 hover:text-gray-400 " >پیک موتوری</li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">سفارش آنلاین غذا</li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">سوپرمارکت</li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">رزور بلیط هواپیما</li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">رزور بلیط قطار </li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">رزور بلیط اتوبوس </li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">رزور هتل </li>
+              <li class="mx-2 my-5 hover:text-gray-400 ">درخواست وانت بار </li>
+            
+            </ul>
+        </li>
+        <li class="flex items-center px-4 py-1 cursor-pointer hover:text-green-500 ">ثبت نام راننده اسنپ</li>
+        <li class="flex items-center px-4 py-1 cursor-pointer hover:text-green-500">باشگاه رانندگان</li>
+        <li class="flex items-center px-4 py-1 cursor-pointer hover:text-green-500">پنل سازمانی</li>
+        <li class="flex items-center px-4 py-1 cursor-pointer hover:text-green-500">بلاگ</li>
+        <li class="relative cursor-pointer group ">
+          <span class="flex items-center justify-center hover:text-green-500 ">
+          درباره اسنپ
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+              class="mx-2 bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path
+                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>              
+          </span>
+          <ul class="hidden w-[150px] group-hover:block top-6 list-none bg-white border-2 flex-col justify-start item-start !absolute z-40    ">
+            <li class="mx-3 my-5 hover:text-gray-400 "  >فرصت های شغلی</li>
+            <li class="mx-3 my-5 hover:text-gray-400 " >درباره ما</li>
+            <li class="mx-3 my-5 hover:text-gray-400 ">تماس با ما </li>
+       
+          
+          </ul>
+      </li>
+       
+
+      </ul>
+
+    </div>
+    <!-- #endregion -->
+
+ <div id="nav_red" class="absolute z-50 hidden w-full text-xs bg-red-600">
+
+<div id="nav_bar" class="hidden w-full h-[100vh] bg-white border border-l-2 sm:w-1/2 sm:flex">
+<ul class="flex flex-col items-start justify-start w-full list-none mx-7">
+  <li class="flex flex-col items-center w-full my-4 cursor-pointer group/item ">
+    <div class="flex  !justify-between w-full items-center">
+      <span> سوپر اپ اسنپ </span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              class=" bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path
+                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>              
+         
+    </div>
+    <ul class="flex-col hidden w-full list-none bg-white group-hover/item:flex">
+      <li class="my-3 mt-4 text-stone-600 hover:text-gray-400"  >درخواست تاکسی</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400 " >پیک موتوری</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">سفارش آنلاین غذا </li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">سوپر مارکت </li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">رزور بلیط هواپیما</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">رزور بلیط قطار</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">رزور بلیط اتوبوس</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">رزور هتل</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">درخواست وانت بار</li>
+      
+ 
+    
+    </ul>
+  
+  </li>
+
+  <li class="flex items-center w-full my-3 cursor-pointer hover:text-green-500">
+    
+    
+    
+    درخواست تاکسی
+  <span class="mx-2 text-sm text-green-500">(سواری و موتور و وانت)  </span>
+  </li>
+  <li class="flex items-center w-full my-3 cursor-pointer hover:text-green-500">
+    
+    
+    
+    باشگاه رانندگان
+  </li>
+  <li class="flex items-center w-full my-3 cursor-pointer hover:text-green-500">
+    
+    
+    
+    پنل سازمانی 
+  </li>
+  <li class="flex items-center w-full my-3 cursor-pointer hover:text-green-500">
+    
+    
+    
+بلاگ
+  </li>
+
+  
+  <li class="flex flex-col items-center w-full my-4 cursor-pointer group/item ">
+    <div class="flex  !justify-between w-full items-center">
+      <span class="text-green-600"> درباره اسنپ</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              class=" bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path
+                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>              
+         
+    </div>
+    <ul class="flex-col items-start justify-start hidden w-full list-none bg-white group-hover/item:flex">
+      <li class="my-3 mt-4 text-stone-600 hover:text-gray-400"  >فرصت های شغلی</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400" >درباره ما</li>
+      <li class="my-3 text-stone-600 hover:text-gray-400">تماس با ما </li>
+      
+ 
+    
+    </ul>
+  
+  </li>
+  <hr class="w-full my-2 divide-solid">
+</ul>
+
+</div>
+  
+ </div>
+    <!-- #region  exprience -->
+    <div class="flex w-full">
+      <div class="flex flex-col items-end justify-center w-full py-2 text-white bg-green-600 px-7 md:w-1/3 lg:w-1/2">
+        <div class="w-full md:w-3/4">
+          <h1 class="md:leading-[60px] lg:leading-[70px]  text-[25px] leading-[45px] mt-5  md:text-4xl " >تجربه‌ی زندگی راحت‌تر،
+            سریع‌تر و به‌صرفه‌تر با سوپراپلیکیشن اسنپ!</h1>
+          <p class="my-5 md:text-xl leading-[35px] ">از درخواست خودرو گرفته تا سفارش غذا، خرید سوپرمارکتی، خرید بلیط سفر،
+            رزرو هتل و... را میتوانید با اسنپ انجام دهید.</p>
+          <div class="justify-start hidden w-full md:flex"><input
+              class="py-1 mx-3 bg-transparent border-b-2 outline-none " style="color: rgba(255, 255, 255, 0.74);" type="text"
+              placeholder="09xxxxxx218 ">
+            <div class="px-5 py-2 text-green-600 bg-white rounded-md cursor-pointer "> ارسال لینک</div>
+          </div>
+          <div class="hidden px-4 py-3 mt-8 mb-3 border border-white cursor-pointer md:inline-block hidde hover:bg-gray-500 "><a href="https://app.snapp.taxi/login"> ورود به وب اپلیکیشن اسنپ</a></div>  
+          <div class="flex items-center justify-center py-3 mt-8 mb-3 text-green-500 bg-white border border-white cursor-pointer md:hidden">ورود به وب اپلیکیشن اسنپ</div> 
+
+        </div>
+      </div>
+      <div class="hidden object-cover md:flex md:w-2/3 lg:w-1/2">
+        <img src="../snapp/image/image-1.jpg" style="transform: scaleX(-1);" alt="" />
+      </div>
+
+    </div>
+      <!-- #endregion -->
+     <!-- #endregion -->
+      <!-- #region download -->
+   <div class="flex-wrap items-center justify-around hidden w-3/4 mx-auto my-12 md:flex ">
+<a href="https://cafebazaar.ir/app/cab.snapp.passenger?referrer=appmetrica_tracking_id%3D243413381082522868&ym_tracking_id=4088481399626507962">    <img  class="my-2 cursor-pointer " height="47px" width="160px"  src="../snapp/image/download/bazar.png" alt=""></a>
+<a href="https://app.snapp.taxi/login">    <img class="my-2 cursor-pointer " height="47px" width="160px"  src="../snapp/image/download/ios.png" alt=""></a>
+    <a href=""><img class="my-2 cursor-pointer " height="47px" width="160px"  src="../snapp/image/download/apk.png" alt=""></a>
+    <a href="https://myket.ir/app/cab.snapp.passenger?referrer=appmetrica_tracking_id%3D1181173947656399155%26ym_tracking_id%3D10480862169150263090"><img class="my-2 cursor-pointer " height="47px" width="160px"  src="../snapp/image/download/myket.png" alt=""></a>
+    <a href="https://apps.apple.com/us/app/%D8%A7%D8%B3%D9%86%D9%BE-%D8%AA%D8%A7%DA%A9%D8%B3%DB%8C-%D8%BA%D8%B0%D8%A7-%D8%B3%D9%88%D9%BE%D8%B1%D9%85%D8%A7%D8%B1%DA%A9%D8%AA/id996370173"><img class="my-2 cursor-pointer" width="160px" height="47px"  src="https://web-cdn.snapp.ir/snapp-website/images/homepage/markets/app_store.svg" alt=""></a>
+   </div>
+   <!-- #endregion -->
+<!-- #endregion -->
+ <!-- #region APP for All -->
+
+<div class="flex flex-col items-center justify-center w-full bg-gray-100">
+  <h1 class="my-8 text-4xl font-bold text-center md:text-4xl text-[25px]">یک اپلیکیشن ، برای تمام نیازها</h1>
+
+  
+  <div class="flex flex-wrap items-start justify-start w-3/4 mx-auto" >
+<div class="w-1/3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/car.svg" alt="">
+  <div class="flex flex-col items-center justify-center leading-[30px] text-center lg:items-start lg:text-right">
+    <h3 class="mx-3  text-[14px] md:font-bold">تاکسی اینترنتی</h3>
+  <p class="hidden mx-3 font-bold md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> درخواست آنلاین خودرو</p>
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/food.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold">سفارش غذا</h3>
+    <p class="hidden mx-3 font-bold md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> سفارش غذا و شیرینی </p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 ">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/image/all/supermarket.png" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold">سوپرمارکت آنلاین</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">تهیه اقلام روزانه با اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/motor.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3  text-[14px] md:font-bold">پیک موتوری</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> حمل و نقل انواع بسته</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/vanet.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">درخواست وانت</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> حمل و نقل انواع بار </p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/paypall.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">سرویس اعتباری</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> خرید قسطی با اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/havapeyma.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">هواپیما داخلی</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> خرید پرواز داخلی</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/havapeyma.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">هواپیما خارجی</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;"> خرید پرواز خارجی</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/hotel.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">رزرو هتل</h3>
+    <p class="hidden mx-3 md:flex lg:text-right "  style="color:rgb(181, 166, 166) ;">رزرو آنلاین هتل</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/bus.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">بلیط اتوبوس</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">گردشگری با اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/qatar.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">بلیط قطار </h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">گردشگری با اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/foroshgah.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold "> فروشگاه آنلاین</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">فروشگاه اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/pezesk.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3   text-[14px] md:font-bold">پزشک</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">درمان با اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/darokhane.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">داروخانه</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">داروخانه آنلاین اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/image/all/bime.png" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">بیمه</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">خرید آنلاین بیمه با اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/asbabkeshi.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold ">اسباب کشی </h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">خدمات اسباب کشی </p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/ranande.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold"  >راننده آنلاین</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">ثبت نام تاکسی اینترنتی  </p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/logo/svg/club.svg" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold">اسنپ  کلاب</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">باشگاه اینترنتی اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/image/all/buy.png" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 font-bold">خرید شارژ</h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">خرید آنلاین شارژ</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/image/all/buy.png" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold">خرید اینترنت </h3>
+    <p class="hidden mx-3 md:flex lg:text-right " style="color:rgb(181, 166, 166) ;">  خرید بسته اینترنت</p>
+  
+  </div>
+  
+  </div>
+</div>
+<div class="w-1/3 my-3">
+  <div class="flex flex-col items-center w-3/4 px-2 py-3 bg-white shadow rounded-2xl lg:flex-row" >
+    <img class="flex rounded-xl lg:justify-center"  width="70" height="70" src="../snapp/image/all/pro.png" alt="">
+  <div class="flex flex-col items-center justify-center text-center lg:items-start lg:text-right leading-[30px] ">
+    <h3 class="mx-3 text-[14px] md:font-bold">اسنپ پرو</h3>
+    <p class="hidden mx-3 md:flex lg:text-right "  style="color:rgb(181, 166, 166) ;">  اشتراک حرفه ای اسنپ</p>
+  
+  </div>
+  
+  </div>
+</div>
+
+
+
+  </div>
+  
+  
+</div>
+
+  <!-- #endregion -->
+<!-- #endregion -->
+ <!-- #region  super app snapp-->
+<div>
+
+<div class="flex flex-col w-full lg:flex-row" >
+  <div class="w-full xl:w-1/2 xl:h-auto">
+  <img class="object-cover w-full xl:h-auto h-[215px]" src="../snapp/image/super app/super-app.jpg" alt="">
+</div>
+<div class="flex justify-start w-full text-right xl:w-1/2 " > 
+<div class="w-full xl:w-5/6 mt-[24px] px-[36px]  " >
+  <h1 class="mb-2 text-[20px] md:text-2xl" style="color: #404040;"> سوپر اپ اسنپ؛ پاسخی به تمام نیازها</h1>
+  <p class="leading-7" style="color: #a4a0a0; font-size: 14px;">اسنپ، اولین تاکسی اینترنتی ایران، بعد از پنج سال فعالیت در حوزه‌ی تردد شهری، به یک سوپر‌اپ با خدمات متنوع تبدیل شد. سوپراپ اسنپ راه‌حلی جدید و ساده است که با استفاده از آن تنها با یک اپلیکیشن می‌توانید علاوه بر درخواست خودرو، موتور و وانت از خدمات متعددی از جمله سفارش غذا، پزشک و مشاور آنلاین، خرید از سوپرمارکت‌ها و فروشگاه‌ها، اسباب‌کشی، خرید بلیط (هواپیما، اتوبوس، قطار)، رزرو هتل، پرداخت قبض و خرید شارژ استفاده کنید.</p>
+</div>
+</div>
+<div>
+
+
+</div>
+  
+</div>
+<div class="w-full xl:translate-y-[-100px] translate-y-[28px]"> 
+<div class="flex flex-wrap justify-around w-full mx-auto xl:flex-nowrap xl:w-2/3">
+  <div class="basis-[245px] my-[20px]">
+    <div class="bg-gray-300 rounded-[28px]"> <img  width="210px" height="190px"  src="../snapp/image/bottom-image/image-1.png" alt=""></div>
+    <div class="px-4 my-3" >
+      <h6 class="my-3 font-bold text-right " >آسان</h6>
+    <p class="text-sm text-right " style="color: #C29BAF;">برای استفاده از هر کدام از خدمات سوپر‌اپ اسنپ کافی است وارد اپلیکیشن اسنپ شوید و روی آیکون مورد نظر بزنید.</p> 
+    </div>
+    
+  </div>
+  <div class="basis-[245px] my-[20px]">
+    <div class="bg-gray-300 rounded-[28px]"> <img  width="210px" height="190px"  src="../snapp/image/bottom-image/image-2.png" alt=""></div>
+    <div class="px-4 my-3" >
+      <h6 class="my-3 font-bold text-right " >سریع</h6>
+    <p class="text-sm text-right " style="color: #C29BAF;">قرار گرفتن خدمات مختلف در یک پلت‌فرم به صرفه‌جویی در زمان کمک می‌کند. سوپراپ اسنپ پاسخی سریع به نیازهای رومزه‌ی شماست.</p> 
+    </div>
+    
+  </div>
+  <div class="basis-[245px] my-[20px]">
+    <div class="bg-gray-300 rounded-[28px]  "> <img  width="210px" height="190px"  src="../snapp/image/bottom-image/image-3.png" alt=""></div>
+    <div class="px-4 my-3" >
+      <h6 class="my-3 font-bold text-right " >به صرفه</h6>
+    <p class="text-sm text-right " style="color: #C29BAF;">سوپراپ اسنپ علاوه بر زمان در هزینه‌های شما نیز صرفه‌جویی می‌کند تا بهترین خدمات را با قیمتی منطقی دریافت کنید..</p> 
+    </div>
+    
+  </div>
+</div>
+  
+</div>
+
+
+  <!-- #endregion -->
+<!-- #endregion -->
+ <!-- #region log in -->
+<div class="flex flex-col items-center w-full bg-[#F2F5F8] justify-normal">
+
+<h1 class="text-3xl text-[#404040] mt-10 text-center ">در کمتر از 10 دقیقه  ثبت نام کنید و به ناوگان اسنپ بپیوندید</h1>
+<p class="my-5 text-center "> بدون نیاز به مراجعه حضوری و از طریق این صفحه , تمام مراحل ثبت نام اینترنتی را انجام دهید 
+</p>
+<a href="https://digitalsignup.snapp.ir/?_gl=1*uq2sl6*_gcl_au*MTEwMzMxOTM5OC4xNzM3NzIxOTcz"><div class="w-auto bg-[#00D170] text-white text-center flex  justify-center items-center cursor-pointer py-3 px-6 rounded-md hover:bg-green-600  my-7" >ثبت نام رانندگان</div></a>
+<div class="w-11/12 overflow-auto rounded-lg lg:w-3/4"> 
+<video   src="../snapp/video/ثبت نام اسنپ.mp4  " controls   ></video>
+
+</div>
+<div class="flex flex-wrap justify-between w-full mx-auto mb-10 lg:w-3/4">
+<div class="lg:w-[48%] w-3/4 mx-auto bg-[#FFFFFF]  rounded-xl flex lg:flex-row flex-col mt-7 px-9 py-10 ">
+  <img class=" lg:w-[120px] lg:h-[66px] w-[80px]" src="../snapp/image/video-bottom/image-1.png" alt="">
+  <div><h1 class="font-bold text-[#834040]"> درآمد تضمینی + پاداش‌های ماهانه و هفتگی</h1>
+  <p class="my-2 text-sm" >با فعالیت در ناوگان اسنپ، علاوه بر کسب درآمد مستمر و امکان تسویه در لحظه می‌توانید با شرکت در طرح‌های تشویقی مختلف، درآمد خود را افزایش دهید.</p>
+  </div>
+</div>
+<div class="lg:w-[48%] w-3/4 mx-auto bg-[#FFFFFF]  rounded-xl flex lg:flex-row flex-col mt-7 px-9 py-10 ">
+  <img class=" lg:w-[120px] lg:h-[66px] w-[80px]" src="../snapp/image/video-bottom/image-2.png" alt="">
+  <div><h1 class="font-bold text-[#834040]"> ساعت کاری دلخواه</h1>
+  <p class="my-2 text-sm" >فعالیت در ناوگان اسنپ محدودیت زمانی ندارد و می‌توانید فعالیت خود را در هر ساعت از شبانه‌روز و متناسب با برنامه‌ی زندگی‌تان شخصی‌سازی کنید.</p>
+  </div>
+</div>
+<div class="lg:w-[48%] w-3/4 mx-auto bg-[#FFFFFF]  rounded-xl flex lg:flex-row flex-col mt-7 px-9 py-10 ">
+  <img class=" lg:w-[120px] lg:h-[66px] w-[80px]" src="../snapp/image/video-bottom/image-3.png" alt="">
+  <div><h1 class="font-bold text-[#834040]"> مزایا و خدمات باشگاه رانندگان</h1>
+  <p class="my-2 text-sm" >در باشگاه رانندگان اسنپ می‌توانید از تسهیلات و خدمات متنوعی از جمله خدمات خودرویی، خدمات درمانی و همچنین خدمات رفاهی و آموزشی بهره‌مند شوید..</p>
+  </div>
+</div>
+<div class="lg:w-[48%] w-3/4 mx-auto bg-[#FFFFFF]  rounded-xl flex lg:flex-row flex-col mt-7 px-9 py-10 ">
+  <img class=" lg:w-[120px] lg:h-[66px] w-[80px]" src="../snapp/image/video-bottom/image-1.png" alt="">
+  <div><h1 class="font-bold text-[#834040]"> کار فیکس</h1>
+  <p class="my-2 text-sm" >باشگاه رانندگان اسنپ به‌تازگی سرویس جدید «اسنپ کارفیکس» را برای سهولت دسترسی کاربران راننده به انواع خدمات خودرویی راه‌اندازی کرده است.</p>
+  </div>
+</div>
+<div class="lg:w-[48%] w-3/4 mx-auto bg-[#FFFFFF]  rounded-xl flex lg:flex-row flex-col mt-7 px-9 py-10 ">
+  <img class=" lg:w-[120px] lg:h-[66px] w-[80px]" src="../snapp/logo/svg/red.svg" alt="">
+  <div><h1 class="font-bold text-[#834040]"> امنیت سفر رانندگان اسنپ</h1>
+  <p class="my-2 text-sm" >اسنپ با ارائه سرویس امنیت سفر در اپلیکیشن رانندگان و بهبود مستمر امکانات امنیتی این سرویس، تلاش می‌‌کند تجربه سفر با اسنپ برای کاربران راننده امن‌ و مطمئن باشد..</p>
+  </div>
+</div>
+<div class="lg:w-[48%] w-3/4 mx-auto bg-[#FFFFFF]  rounded-xl flex lg:flex-row flex-col mt-7 px-9 py-10 ">
+  <img class=" lg:w-[120px] lg:h-[66px] w-[80px]" src="../snapp/logo/svg/message.svg" alt="">
+  <div><h1 class="font-bold text-[#834040]"> پشتیبانی 24 ساعته و سریع</h1>
+  <p class="my-2 text-sm" >تیم پشتیبانی اسنپ در تمامی ساعت‌های شبانه‌روز پاسخگوی سوال‌ها و مشکلات کاربران راننده است. بخش «پشتیبانی» در اپلیکیشن رانندگان، سریع‌ترین راه ارتباطی شما با تیم پشتیبانی اسنپ است</p>
+  </div>
+</div>
+
+</div>
+</div>
+<!-- #region  footer-->
+<footer>
+<div class="flex flex-col items-center justify-center w-full mx-auto text-sm my-9 ">
+  <ul class="flex flex-wrap justify-center w-3/4 text-[#a5a5a0] ">
+    <li class="m-3 hover:text-[lightgray]"><a href="#">فرصت های شغلی</a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">بلاگ</a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">شرایط و قوانین</a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">پنل سازمانی</a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">سوالات متداول</a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">باشگاه رانندگان
+    </a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">ثبت نام راننده اسنپ</a></li>
+    <li class="m-3 hover:text-[lightgray] "><a href="#">درباره اسنپ</a></li>
+    <li class="m-3 hover:text-[lightgray]"><a href="#">  تماس با ما </a></li>
+  </ul>
+  
+  <ul class="flex flex-wrap justify-center w-3/4 my-9">
+    <li class="mx-2"><a href="#"><img src="../snapp/logo/svg/telegram.svg" alt=""></a></li>
+    <li class="mx-2"><a href="#"><img src="../snapp/logo/svg/instaghram.svg" alt=""></a></li>
+    <li class="mx-2"><a href="#"><img src="../snapp/logo/svg/youtube.svg" alt=""></a></li>
+    <li class="mx-2"><a href="#"><img src="../snapp/logo/svg/linkdin.svg" alt=""></a></li>
+  
+  </ul>
+  <div class="flex ">
+    <div> <img src="../snapp/image/video-bottom/image-5.png" width="130px" height="130px" alt=""></div>
+  </div>
+</div>
+
+
+
+</footer>
+
+
+
+
+<script> 
+let nav_red=document.querySelector('#nav_red');
+let nav_bar=document.querySelector('#nav_bar');
+let three_line=document.querySelector('#three_line');
+
+three_line.addEventListener('click',()=>{
+  if( nav_red.classList.contains('hidden')){
+    nav_red.classList.remove('hidden');
+    nav_bar.classList.remove('hidden');
+  } else {
+    nav_red.classList.add('hidden');
+    nav_bar.classList.add('hidden');
+  }
+});
+
+</script>
+
+</body>
+
+</html>

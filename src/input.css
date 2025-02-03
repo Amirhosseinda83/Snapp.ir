@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    @font-face {
+      font-family: 'bold';
+      src: url(../snapp/fonts/fa-Iran-sans-web-bold.woff2);
+    }
+    font-family: 'bold';
+  }
+  @layer base {
+    @font-face {
+      font-family: 'light';
+      src: url(../snapp/fonts/fa-Iran-sans-web-light.woff2);
+    }
+    font-family: 'light';
+  }
